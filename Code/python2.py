@@ -233,22 +233,24 @@ def eight(input,  a):
 	# There are no hints for this question.
 
 def nine(string1, string2):
-	string1In2 = True
-	string2In1 = True
-	for char in string1:
-		if char not in string2:
-			answer = False
-
-	for char2 in string2:
-			if char2 not in string1:
-				string2In1 = False
+	list1 = list(string1)
+	list2 = list(string2)
 	
-	if string1In2 or string2In1:
+	answer1 = True
+	answer2 = True
+
+	for elem in list1:
+		if elem not in list2:
+			answer1 = False
+	for elem2 in list2:
+		if elem2 not in list1:
+			answer2 = False
+
+	if answer1 or answer2:
 		return True
 	else:
 		return False
 
-print(nine("cat", "dog"))
 	# <QUESTION 10>
 
 	# Write a function which takes 2 integers greater than 0, X,Y as input and generates a 2-dimensional array. 
